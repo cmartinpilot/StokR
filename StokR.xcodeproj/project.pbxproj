@@ -8,22 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		30B5D1D21EC513AC00FF7F61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B5D1D11EC513AC00FF7F61 /* AppDelegate.swift */; };
-		30B5D1D41EC513AC00FF7F61 /* TailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B5D1D31EC513AC00FF7F61 /* TailsViewController.swift */; };
 		30B5D1D71EC513AC00FF7F61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30B5D1D51EC513AC00FF7F61 /* Main.storyboard */; };
 		30B5D1DA1EC513AC00FF7F61 /* StokR.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30B5D1D81EC513AC00FF7F61 /* StokR.xcdatamodeld */; };
 		30B5D1DC1EC513AC00FF7F61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30B5D1DB1EC513AC00FF7F61 /* Assets.xcassets */; };
 		30B5D1DF1EC513AC00FF7F61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30B5D1DD1EC513AC00FF7F61 /* LaunchScreen.storyboard */; };
+		30B5D1E71EC517CB00FF7F61 /* TailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B5D1E61EC517CB00FF7F61 /* TailsTableViewController.swift */; };
+		30B5D1ED1EC51B8A00FF7F61 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B5D1EC1EC51B8A00FF7F61 /* CloudKit.framework */; };
+		30B5D1EF1EC53D9E00FF7F61 /* EditTailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B5D1EE1EC53D9E00FF7F61 /* EditTailsViewController.swift */; };
+		30B5D1F11EC5415C00FF7F61 /* TailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B5D1F01EC5415C00FF7F61 /* TailTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		30B5D1CE1EC513AC00FF7F61 /* StokR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StokR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B5D1D11EC513AC00FF7F61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		30B5D1D31EC513AC00FF7F61 /* TailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TailsViewController.swift; sourceTree = "<group>"; };
 		30B5D1D61EC513AC00FF7F61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30B5D1D91EC513AC00FF7F61 /* StokR.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StokR.xcdatamodel; sourceTree = "<group>"; };
 		30B5D1DB1EC513AC00FF7F61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30B5D1DE1EC513AC00FF7F61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30B5D1E01EC513AC00FF7F61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30B5D1E61EC517CB00FF7F61 /* TailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TailsTableViewController.swift; path = ../TailsTableViewController.swift; sourceTree = "<group>"; };
+		30B5D1EA1EC51B8700FF7F61 /* StokR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StokR.entitlements; sourceTree = "<group>"; };
+		30B5D1EC1EC51B8A00FF7F61 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		30B5D1EE1EC53D9E00FF7F61 /* EditTailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTailsViewController.swift; sourceTree = "<group>"; };
+		30B5D1F01EC5415C00FF7F61 /* TailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30B5D1ED1EC51B8A00FF7F61 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +50,7 @@
 			children = (
 				30B5D1D01EC513AC00FF7F61 /* StokR */,
 				30B5D1CF1EC513AC00FF7F61 /* Products */,
+				30B5D1EB1EC51B8A00FF7F61 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,8 +65,11 @@
 		30B5D1D01EC513AC00FF7F61 /* StokR */ = {
 			isa = PBXGroup;
 			children = (
+				30B5D1EA1EC51B8700FF7F61 /* StokR.entitlements */,
 				30B5D1D11EC513AC00FF7F61 /* AppDelegate.swift */,
-				30B5D1D31EC513AC00FF7F61 /* TailsViewController.swift */,
+				30B5D1E61EC517CB00FF7F61 /* TailsTableViewController.swift */,
+				30B5D1F01EC5415C00FF7F61 /* TailTableViewCell.swift */,
+				30B5D1EE1EC53D9E00FF7F61 /* EditTailsViewController.swift */,
 				30B5D1D51EC513AC00FF7F61 /* Main.storyboard */,
 				30B5D1DB1EC513AC00FF7F61 /* Assets.xcassets */,
 				30B5D1DD1EC513AC00FF7F61 /* LaunchScreen.storyboard */,
@@ -65,6 +77,14 @@
 				30B5D1D81EC513AC00FF7F61 /* StokR.xcdatamodeld */,
 			);
 			path = StokR;
+			sourceTree = "<group>";
+		};
+		30B5D1EB1EC51B8A00FF7F61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				30B5D1EC1EC51B8A00FF7F61 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -101,6 +121,14 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 974VC57NGN;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -140,8 +168,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30B5D1E71EC517CB00FF7F61 /* TailsTableViewController.swift in Sources */,
+				30B5D1F11EC5415C00FF7F61 /* TailTableViewCell.swift in Sources */,
 				30B5D1DA1EC513AC00FF7F61 /* StokR.xcdatamodeld in Sources */,
-				30B5D1D41EC513AC00FF7F61 /* TailsViewController.swift in Sources */,
+				30B5D1EF1EC53D9E00FF7F61 /* EditTailsViewController.swift in Sources */,
 				30B5D1D21EC513AC00FF7F61 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +297,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StokR/StokR.entitlements;
 				DEVELOPMENT_TEAM = 974VC57NGN;
 				INFOPLIST_FILE = StokR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -280,6 +311,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StokR/StokR.entitlements;
 				DEVELOPMENT_TEAM = 974VC57NGN;
 				INFOPLIST_FILE = StokR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
