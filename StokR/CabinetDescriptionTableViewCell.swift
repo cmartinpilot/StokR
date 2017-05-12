@@ -8,10 +8,10 @@
 
 import UIKit
 
-class TailTableViewCell: UITableViewCell {
+class CabinetDescriptionTableViewCell: UITableViewCell {
 
     
-    @IBOutlet weak var tailLabel: UILabel!
+    @IBOutlet weak var cabinetLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

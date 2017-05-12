@@ -19,16 +19,16 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tailCell" rowHeight="100" id="vpd-Fq-XmP" customClass="TailTableViewCell" customModule="StokR" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cabinetCell" rowHeight="100" id="vpd-Fq-XmP" userLabel="cabinetCell" customClass="CabinetDescriptionTableViewCell" customModule="StokR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vpd-Fq-XmP" id="OOq-p1-2Y8">
                                     <rect key="frame" x="0.0" y="0.0" width="328" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N279DV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPh-qp-qCx">
-                                            <rect key="frame" x="8" y="24" width="170" height="50"/>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cabinet Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPh-qp-qCx">
+                                            <rect key="frame" x="8" y="24" width="312" height="50"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                             <color key="textColor" red="0.26211422680000002" green="0.31539288160000001" blue="0.68637776370000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -37,12 +37,12 @@
                                         <constraint firstItem="wPh-qp-qCx" firstAttribute="centerY" secondItem="OOq-p1-2Y8" secondAttribute="centerY" id="NK3-tf-iQu"/>
                                         <constraint firstItem="wPh-qp-qCx" firstAttribute="height" secondItem="OOq-p1-2Y8" secondAttribute="height" constant="-49.5" id="QXu-z2-ZIk"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="wPh-qp-qCx" secondAttribute="leading" id="bK2-Ku-pna"/>
-                                        <constraint firstItem="wPh-qp-qCx" firstAttribute="width" secondItem="OOq-p1-2Y8" secondAttribute="width" constant="-158" id="kDE-rN-WKl"/>
+                                        <constraint firstItem="wPh-qp-qCx" firstAttribute="width" secondItem="OOq-p1-2Y8" secondAttribute="width" constant="-16" id="kDE-rN-WKl"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="tailLabel" destination="wPh-qp-qCx" id="q5X-nB-Vup"/>
-                                    <segue destination="ZUw-Um-odg" kind="show" identifier="editTailsSegue" trigger="accessoryAction" id="GJY-8u-apj"/>
+                                    <outlet property="cabinetLabel" destination="wPh-qp-qCx" id="vCT-oI-aNg"/>
+                                    <segue destination="ZUw-Um-odg" kind="show" identifier="editTailSegue" trigger="accessoryAction" id="GJY-8u-apj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -55,6 +55,9 @@
                     <navigationItem key="navigationItem" id="bKv-hy-qJK">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="zGt-rQ-336">
                             <color key="tintColor" red="0.98823529409999999" green="0.80392156859999997" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="ZUw-Um-odg" kind="show" identifier="addTailSegue" id="MpR-QT-jLb"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -105,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vWg-7G-UAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1463" y="569"/>
+            <point key="canvasLocation" x="1759" y="531"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f0J-sh-iV6">
@@ -126,4 +129,7 @@
             <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="GJY-8u-apj"/>
+    </inferredMetricsTieBreakers>
 </document>

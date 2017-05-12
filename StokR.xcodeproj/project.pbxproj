@@ -15,7 +15,7 @@
 		30B5D1E71EC517CB00FF7F61 /* TailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B5D1E61EC517CB00FF7F61 /* TailsTableViewController.swift */; };
 		30B5D1ED1EC51B8A00FF7F61 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B5D1EC1EC51B8A00FF7F61 /* CloudKit.framework */; };
 		30B5D1EF1EC53D9E00FF7F61 /* EditTailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B5D1EE1EC53D9E00FF7F61 /* EditTailsViewController.swift */; };
-		30B5D1F11EC5415C00FF7F61 /* TailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B5D1F01EC5415C00FF7F61 /* TailTableViewCell.swift */; };
+		30B5D1F11EC5415C00FF7F61 /* CabinetDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B5D1F01EC5415C00FF7F61 /* CabinetDescriptionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 		30B5D1EA1EC51B8700FF7F61 /* StokR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StokR.entitlements; sourceTree = "<group>"; };
 		30B5D1EC1EC51B8A00FF7F61 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		30B5D1EE1EC53D9E00FF7F61 /* EditTailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTailsViewController.swift; sourceTree = "<group>"; };
-		30B5D1F01EC5415C00FF7F61 /* TailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TailTableViewCell.swift; sourceTree = "<group>"; };
+		30B5D1F01EC5415C00FF7F61 /* CabinetDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabinetDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 				30B5D1EA1EC51B8700FF7F61 /* StokR.entitlements */,
 				30B5D1D11EC513AC00FF7F61 /* AppDelegate.swift */,
 				30B5D1E61EC517CB00FF7F61 /* TailsTableViewController.swift */,
-				30B5D1F01EC5415C00FF7F61 /* TailTableViewCell.swift */,
+				30B5D1F01EC5415C00FF7F61 /* CabinetDescriptionTableViewCell.swift */,
 				30B5D1EE1EC53D9E00FF7F61 /* EditTailsViewController.swift */,
 				30B5D1D51EC513AC00FF7F61 /* Main.storyboard */,
 				30B5D1DB1EC513AC00FF7F61 /* Assets.xcassets */,
@@ -169,7 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30B5D1E71EC517CB00FF7F61 /* TailsTableViewController.swift in Sources */,
-				30B5D1F11EC5415C00FF7F61 /* TailTableViewCell.swift in Sources */,
+				30B5D1F11EC5415C00FF7F61 /* CabinetDescriptionTableViewCell.swift in Sources */,
 				30B5D1DA1EC513AC00FF7F61 /* StokR.xcdatamodeld in Sources */,
 				30B5D1EF1EC53D9E00FF7F61 /* EditTailsViewController.swift in Sources */,
 				30B5D1D21EC513AC00FF7F61 /* AppDelegate.swift in Sources */,
@@ -340,6 +340,7 @@
 				30B5D1E51EC513AC00FF7F61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

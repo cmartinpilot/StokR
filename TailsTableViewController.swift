@@ -8,19 +8,33 @@
 
 import UIKit
 
+struct AircraftInteriorConfiguration{
+    var tail:String
+    var cabinetDescriptions:[String]
+}
+
 class TailsTableViewController: UITableViewController {
 
-    var data = ["N279DV", "N716DV", "N606MC", "N522AC", "N255DV"]
+    var superData:[AircraftInteriorConfiguration] = []
     
+
+    
+    var data = ["N279DV", "N716DV", "N606MC", "N522AC", "N255DV"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
+        
+        let one = AircraftInteriorConfiguration(tail: "N279DV", cabinetDescriptions: ["Liquor", "Medicine", "Drinks", "Top Snack", "Bottom Snack", "Lav Kleenex"])
+        
+        let two = AircraftInteriorConfiguration(tail: "N716DV", cabinetDescriptions: ["Liquor", "Medicine", "Drinks", "Top Snack", "Bottom Snack", "Lav Kleenex"])
+        
+        self.superData.append(one)
+        self.superData.append(two)
+        
+        // Uncmment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,29 +46,49 @@ class TailsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+
+        return self.superData.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return self.data.count
+        
+        var i:Int = 0
+        
+        for aircraftInteriorConfigurations in superData {
+            if section == i {
+                return aircraftInteriorConfigurations.cabinetDescriptions.count
+            }
+            i += 1
+        }
+        return 0
     }
 
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let aircraftInteriorConfiguration = self.superData[section]
+        return aircraftInteriorConfiguration.tail
+    }
+    
+
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tailCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cabinetCell", for: indexPath)
 
-        let tail = self.data[indexPath.row]
+        let aircraftInteriorConfiguration = self.superData[indexPath.section]
+        let cabinetDescription = aircraftInteriorConfiguration.cabinetDescriptions[indexPath.row]
         
-        (cell as? TailTableViewCell)?.tailLabel.text = tail
+        (cell as? CabinetDescriptionTableViewCell)?.cabinetLabel.text = cabinetDescription
 
         return cell
     }
  
     func updateAircraft(tail: String?, row: Int){
         if tail != nil {
-            self.data[row] = tail!
+            if row >= self.data.count{
+                self.data.append(tail!)
+            }else{
+                self.data[row] = tail!
+            }
             self.tableView.reloadData()
         }
     }
@@ -75,17 +109,15 @@ class TailsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            self.data.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
+ 
 
     /*
     // Override to support rearranging the table view.
@@ -107,27 +139,28 @@ class TailsTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let cell = (sender as? TailTableViewCell)
-        let row = self.tableView.indexPath(for: cell!)?.row
-        let tail = cell?.tailLabel.text
-        
-//        let selectionIndex = self.tableView.indexPathForSelectedRow
-//        let selectedCell = self.tableView.cellForRow(at: selectionIndex!)
-//        let tail = (selectedCell as? TailTableViewCell)!.tailLabel.text
-        
-        print("prepareForSegue")
-        
-        if segue.identifier == "editTailsSegue" {
-            
-            (segue.destination as? EditTailsViewController)?.passedTail = tail
-            (segue.destination as? EditTailsViewController)?.passedRow = row
-        }
-        
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        
+//        
+//        
+//        if segue.identifier == "editTailSegue" {
+//            
+//            let cell = (sender as? TailTableViewCell)
+//            let row = self.tableView.indexPath(for: cell!)?.row
+//            let tail = cell?.tailLabel.text
+//            
+//            (segue.destination as? EditTailsViewController)?.passedTail = tail
+//            (segue.destination as? EditTailsViewController)?.passedRow = row
+//        }
+//        
+//        if segue.identifier == "addTailSegue" {
+//            
+//            let editVC = (segue.destination as? EditTailsViewController)
+//            editVC?.passedRow = self.data.count
+//        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
+//    }
  
 
 }
