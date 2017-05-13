@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,34 +13,34 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TailsTableViewController" customModule="StokR" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="Zcv-xn-h6O">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" id="Zcv-xn-h6O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cabinetCell" rowHeight="100" id="vpd-Fq-XmP" userLabel="cabinetCell" customClass="CabinetDescriptionTableViewCell" customModule="StokR" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cabinetCell" rowHeight="45" id="vpd-Fq-XmP" userLabel="cabinetCell" customClass="CabinetDescriptionTableViewCell" customModule="StokR" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vpd-Fq-XmP" id="OOq-p1-2Y8">
-                                    <rect key="frame" x="0.0" y="0.0" width="328" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="328" height="45"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cabinet Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPh-qp-qCx">
-                                            <rect key="frame" x="8" y="24" width="312" height="50"/>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
-                                            <color key="textColor" red="0.26211422680000002" green="0.31539288160000001" blue="0.68637776370000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Cabinet Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nuc-l6-2Bj">
+                                            <rect key="frame" x="8.5" y="7" width="321" height="30"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="18"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="wPh-qp-qCx" firstAttribute="centerY" secondItem="OOq-p1-2Y8" secondAttribute="centerY" id="NK3-tf-iQu"/>
-                                        <constraint firstItem="wPh-qp-qCx" firstAttribute="height" secondItem="OOq-p1-2Y8" secondAttribute="height" constant="-49.5" id="QXu-z2-ZIk"/>
-                                        <constraint firstAttribute="leadingMargin" secondItem="wPh-qp-qCx" secondAttribute="leading" id="bK2-Ku-pna"/>
-                                        <constraint firstItem="wPh-qp-qCx" firstAttribute="width" secondItem="OOq-p1-2Y8" secondAttribute="width" constant="-16" id="kDE-rN-WKl"/>
+                                        <constraint firstItem="nuc-l6-2Bj" firstAttribute="centerX" secondItem="OOq-p1-2Y8" secondAttribute="centerX" constant="4.5" id="CiV-XK-Ofs"/>
+                                        <constraint firstItem="nuc-l6-2Bj" firstAttribute="centerY" secondItem="OOq-p1-2Y8" secondAttribute="centerY" id="SK9-nr-mqa"/>
+                                        <constraint firstItem="nuc-l6-2Bj" firstAttribute="height" secondItem="OOq-p1-2Y8" secondAttribute="height" constant="-15" id="gB3-Iy-zQg"/>
+                                        <constraint firstItem="nuc-l6-2Bj" firstAttribute="width" secondItem="OOq-p1-2Y8" secondAttribute="width" constant="-7" id="snC-xD-1qI"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="cabinetLabel" destination="wPh-qp-qCx" id="vCT-oI-aNg"/>
+                                    <outlet property="cabinetTextField" destination="nuc-l6-2Bj" id="LP4-xj-mFv"/>
                                     <segue destination="ZUw-Um-odg" kind="show" identifier="editTailSegue" trigger="accessoryAction" id="GJY-8u-apj"/>
                                 </connections>
                             </tableViewCell>

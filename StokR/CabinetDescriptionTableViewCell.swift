@@ -10,8 +10,7 @@ import UIKit
 
 class CabinetDescriptionTableViewCell: UITableViewCell {
 
-    
-    @IBOutlet weak var cabinetLabel: UILabel!
+    @IBOutlet weak var cabinetTextField: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()

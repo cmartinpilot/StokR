@@ -77,7 +77,7 @@ class TailsTableViewController: UITableViewController {
         let aircraftInteriorConfiguration = self.superData[indexPath.section]
         let cabinetDescription = aircraftInteriorConfiguration.cabinetDescriptions[indexPath.row]
         
-        (cell as? CabinetDescriptionTableViewCell)?.cabinetLabel.text = cabinetDescription
+        (cell as? CabinetDescriptionTableViewCell)?.cabinetTextField.text = cabinetDescription
 
         return cell
     }
