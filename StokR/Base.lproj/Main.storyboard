@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vpd-Fq-XmP" id="OOq-p1-2Y8">
-                                    <rect key="frame" x="0.0" y="0.0" width="328" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="328" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N279DV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPh-qp-qCx">
@@ -42,7 +42,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="tailLabel" destination="wPh-qp-qCx" id="q5X-nB-Vup"/>
-                                    <segue destination="ZUw-Um-odg" kind="show" identifier="editTailsSegue" trigger="accessoryAction" id="GJY-8u-apj"/>
+                                    <segue destination="ZUw-Um-odg" kind="show" identifier="editTailSegue" trigger="accessoryAction" id="GJY-8u-apj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -55,6 +55,9 @@
                     <navigationItem key="navigationItem" id="bKv-hy-qJK">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="zGt-rQ-336">
                             <color key="tintColor" red="0.98823529409999999" green="0.80392156859999997" blue="0.074509803920000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="ZUw-Um-odg" kind="show" identifier="addTailSegue" id="NhY-gL-MXT"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -75,22 +78,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jc8-oe-zvi">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jc8-oe-zvi">
                                 <rect key="frame" x="16" y="164" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit Tail Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CS-72-FLL">
-                                <rect key="frame" x="16" y="120" width="135" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit/Add Tail Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CS-72-FLL">
+                                <rect key="frame" x="16" y="120" width="179" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="cai-F4-0fr"/>
+                                    <constraint firstAttribute="width" constant="179" id="oqV-T0-hw3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jc8-oe-zvi" firstAttribute="top" secondItem="7CS-72-FLL" secondAttribute="bottom" constant="23" id="H2K-aH-hbp"/>
+                            <constraint firstItem="jc8-oe-zvi" firstAttribute="trailing" secondItem="4Kp-O6-Dfv" secondAttribute="trailingMargin" id="Rku-hs-uhw"/>
+                            <constraint firstItem="fvo-ks-oB6" firstAttribute="top" secondItem="jc8-oe-zvi" secondAttribute="bottom" constant="473" id="htW-jl-AvT"/>
+                            <constraint firstItem="jc8-oe-zvi" firstAttribute="leading" secondItem="4Kp-O6-Dfv" secondAttribute="leadingMargin" id="mlC-qi-XDZ"/>
+                            <constraint firstItem="7CS-72-FLL" firstAttribute="leading" secondItem="jc8-oe-zvi" secondAttribute="leading" id="rc9-FR-gkH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="h9k-g6-VBj">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="8BP-py-oaQ">
@@ -105,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vWg-7G-UAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1463" y="569"/>
+            <point key="canvasLocation" x="1761" y="507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f0J-sh-iV6">
@@ -126,4 +138,7 @@
             <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="GJY-8u-apj"/>
+    </inferredMetricsTieBreakers>
 </document>
