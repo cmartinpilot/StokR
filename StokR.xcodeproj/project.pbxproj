@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30A3D0741ECB7CD100A79806 /* CabinetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A3D0731ECB7CD100A79806 /* CabinetCell.swift */; };
 		30B5D1D21EC513AC00FF7F61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B5D1D11EC513AC00FF7F61 /* AppDelegate.swift */; };
 		30B5D1D71EC513AC00FF7F61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30B5D1D51EC513AC00FF7F61 /* Main.storyboard */; };
 		30B5D1DA1EC513AC00FF7F61 /* StokR.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30B5D1D81EC513AC00FF7F61 /* StokR.xcdatamodeld */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30A3D0731ECB7CD100A79806 /* CabinetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabinetCell.swift; sourceTree = "<group>"; };
 		30B5D1CE1EC513AC00FF7F61 /* StokR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StokR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B5D1D11EC513AC00FF7F61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30B5D1D61EC513AC00FF7F61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				30B5D1F01EC5415C00FF7F61 /* TailTableViewCell.swift */,
 				30B5D1EE1EC53D9E00FF7F61 /* EditTailsViewController.swift */,
 				30B5D1D51EC513AC00FF7F61 /* Main.storyboard */,
+				30A3D0731ECB7CD100A79806 /* CabinetCell.swift */,
 				30B5D1DB1EC513AC00FF7F61 /* Assets.xcassets */,
 				30B5D1DD1EC513AC00FF7F61 /* LaunchScreen.storyboard */,
 				30B5D1E01EC513AC00FF7F61 /* Info.plist */,
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30A3D0741ECB7CD100A79806 /* CabinetCell.swift in Sources */,
 				30B5D1E71EC517CB00FF7F61 /* TailsTableViewController.swift in Sources */,
 				30B5D1F11EC5415C00FF7F61 /* TailTableViewCell.swift in Sources */,
 				30B5D1DA1EC513AC00FF7F61 /* StokR.xcdatamodeld in Sources */,
@@ -340,6 +344,7 @@
 				30B5D1E51EC513AC00FF7F61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

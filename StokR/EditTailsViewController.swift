@@ -8,10 +8,12 @@
 
 import UIKit
 
-class EditTailsViewController: UIViewController, UITextFieldDelegate {
+class EditTailsViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tailsTextField: UITextField!
 
+    @IBOutlet weak var cabinetsTableView: UITableView!
+    
     var passedTail:String?
     var passedRow:Int?
     
@@ -28,7 +30,6 @@ class EditTailsViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         
-        self.tailsTextField.becomeFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,5 +50,18 @@ class EditTailsViewController: UIViewController, UITextFieldDelegate {
         // Pass the selected object to the new view controller.
     }
  
+    
+    // MARK: - Table View Delegate
+    
+    // MARK: - Table View Data Source
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cabinetCell")!
+        return cell
+    }
 
 }
