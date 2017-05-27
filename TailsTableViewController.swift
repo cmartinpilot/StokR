@@ -8,14 +8,85 @@
 
 import UIKit
 
+struct AircraftInteriorConfiguration{
+    var tail:String
+    var cabinetDescriptions:[[String:UIImage?]]
+    
+    init(){
+        self.tail = ""
+        self.cabinetDescriptions = []
+    }
+    
+    init(tail: String, cabinetDescriptions: [[String:UIImage?]]) {
+        self.tail = tail
+        self.cabinetDescriptions = cabinetDescriptions
+    }
+}
+
+final class DataManager {
+    
+    //Properties
+    static let shared:DataManager = {
+        let instance = DataManager()
+        
+        //test data ----- DELETE
+        let dataPointOne = AircraftInteriorConfiguration(tail: "N255DV", cabinetDescriptions: [["Water":#imageLiteral(resourceName: "IMG_3168.JPG")]])
+        instance.data.append(dataPointOne)
+        //test data ----- DELETE
+        
+        return instance
+    }()
+
+    
+    var data:[AircraftInteriorConfiguration] = []{
+        didSet{
+            self.tails = []
+            for config in data {
+                self.tails.append(config.tail)
+            }
+        }
+    }
+    var tails:[String] = []
+    
+    //Functions
+    func add(configuration:AircraftInteriorConfiguration){
+        self.data.append(configuration)
+    }
+    
+    func replace(withConfiguration configuration:AircraftInteriorConfiguration, atIndex index:Int){
+        self.data[index] = configuration
+    }
+    
+    func delete(configurationAtIndex index:Int){
+        self.data.remove(at: index)
+    }
+    
+    
+    
+    //Not used.  May need to delete
+//    func cabinetNameAndImageForTail(_ tail: String, atIndex index: Int) -> [String:UIImage?]?{
+//        
+//        if self.data.count != 0 {
+//            
+//            for config in self.data{
+//                if config.tail == tail{
+//                    return config.cabinetDescriptions[index]
+//                }
+//            }
+//        }
+//        return nil
+//    }
+    
+}
+
 class TailsTableViewController: UITableViewController {
 
-    var data = ["N279DV", "N716DV", "N606MC", "N522AC", "N255DV"]
-    
+    let dataManager = DataManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -32,20 +103,21 @@ class TailsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return self.data.count
+        
+        guard self.dataManager.tails.count != 0 else {return 0}
+        return dataManager.tails.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tailCell", for: indexPath)
 
-        let tail = self.data[indexPath.row]
+        let tail = self.dataManager.tails[indexPath.row]
         
         (cell as? TailTableViewCell)?.tailLabel.text = tail
 
@@ -53,23 +125,13 @@ class TailsTableViewController: UITableViewController {
     }
 
     
-    func updateAircraft(tail: String?, row: Int){
-        if tail != nil {
-            if row >= self.data.count{
-                self.data.append(tail!)
-            }else{
-                self.data[row] = tail!
-            }
-            self.tableView.reloadData()
-        }
+    func update(){
+        self.tableView.reloadData()
     }
     
     
     @IBAction func unwindFromEdit(sender: UIStoryboardSegue){
-        let editedTail = (sender.source as? EditTailsViewController)?.passedTail
-        let row = (sender.source as? EditTailsViewController)?.passedRow
-        
-        self.updateAircraft(tail: editedTail, row: row!)
+        self.update()
     }
     
     /*
@@ -84,7 +146,7 @@ class TailsTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.data.remove(at: indexPath.row)
+            self.dataManager.delete(configurationAtIndex: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
@@ -101,16 +163,13 @@ class TailsTableViewController: UITableViewController {
     
                 let cell = (sender as? TailTableViewCell)
                 let row = self.tableView.indexPath(for: cell!)?.row
-                let tail = cell?.tailLabel.text
-    
-                (segue.destination as? EditTailsViewController)?.passedTail = tail
-                (segue.destination as? EditTailsViewController)?.passedRow = row
+                
+                (segue.destination as? EditTailsViewController)?.passedTailRow = row
             }
     
             if segue.identifier == "addTailSegue" {
     
-                let editVC = (segue.destination as? EditTailsViewController)
-                editVC?.passedRow = self.data.count
+                (segue.destination as? EditTailsViewController)?.passedTailRow = nil
             }
 
         }

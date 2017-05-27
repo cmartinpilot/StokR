@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30A3D0741ECB7CD100A79806 /* CabinetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A3D0731ECB7CD100A79806 /* CabinetCell.swift */; };
+		30A3D0761ECB807900A79806 /* IMG_3168.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 30A3D0751ECB807900A79806 /* IMG_3168.JPG */; };
 		30B5D1D21EC513AC00FF7F61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B5D1D11EC513AC00FF7F61 /* AppDelegate.swift */; };
 		30B5D1D71EC513AC00FF7F61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30B5D1D51EC513AC00FF7F61 /* Main.storyboard */; };
 		30B5D1DA1EC513AC00FF7F61 /* StokR.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30B5D1D81EC513AC00FF7F61 /* StokR.xcdatamodeld */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		30A3D0731ECB7CD100A79806 /* CabinetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabinetCell.swift; sourceTree = "<group>"; };
+		30A3D0751ECB807900A79806 /* IMG_3168.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3168.JPG; sourceTree = "<group>"; };
 		30B5D1CE1EC513AC00FF7F61 /* StokR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StokR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B5D1D11EC513AC00FF7F61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30B5D1D61EC513AC00FF7F61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 		30B5D1C51EC513AB00FF7F61 = {
 			isa = PBXGroup;
 			children = (
+				30A3D0751ECB807900A79806 /* IMG_3168.JPG */,
 				30B5D1D01EC513AC00FF7F61 /* StokR */,
 				30B5D1CF1EC513AC00FF7F61 /* Products */,
 				30B5D1EB1EC51B8A00FF7F61 /* Frameworks */,
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30B5D1DF1EC513AC00FF7F61 /* LaunchScreen.storyboard in Resources */,
+				30A3D0761ECB807900A79806 /* IMG_3168.JPG in Resources */,
 				30B5D1DC1EC513AC00FF7F61 /* Assets.xcassets in Resources */,
 				30B5D1D71EC513AC00FF7F61 /* Main.storyboard in Resources */,
 			);

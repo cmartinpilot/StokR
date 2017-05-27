@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Tby-yh-jMw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Tby-yh-jMw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -101,8 +102,9 @@
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2b4-t0-KKu">
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2b4-t0-KKu">
                                                     <rect key="frame" x="288" y="8" width="65" height="76"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="65" id="5Td-QZ-1yO"/>
                                                         <constraint firstAttribute="height" constant="76" id="DFw-6W-CnY"/>
@@ -124,6 +126,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZUw-Um-odg" id="0tr-6E-ZbP"/>
+                                    <outlet property="delegate" destination="ZUw-Um-odg" id="viE-aZ-bxM"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -138,20 +144,28 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="h9k-g6-VBj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8BP-py-oaQ">
-                            <connections>
-                                <segue destination="b65-B7-BFk" kind="unwind" unwindAction="unwindFromEditWithSender:" id="4T2-pV-oEL"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="save" id="8BP-py-oaQ">
+                                <connections>
+                                    <segue destination="b65-B7-BFk" kind="unwind" unwindAction="unwindFromEditWithSender:" id="4T2-pV-oEL"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="qWg-nU-fBK">
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="ZUw-Um-odg" id="409-am-FPr"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="cabinetsTableView" destination="lRF-Bu-6HU" id="Ivn-4b-oeV"/>
+                        <outlet property="tableView" destination="lRF-Bu-6HU" id="DFV-Yu-mfD"/>
                         <outlet property="tailsTextField" destination="jc8-oe-zvi" id="6Gn-b8-7st"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vWg-7G-UAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1760.8" y="506.89655172413796"/>
+            <point key="canvasLocation" x="1756" y="507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f0J-sh-iV6">
@@ -173,6 +187,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GJY-8u-apj"/>
+        <segue reference="NhY-gL-MXT"/>
     </inferredMetricsTieBreakers>
 </document>
