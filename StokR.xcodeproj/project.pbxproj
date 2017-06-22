@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300A47891EDB7B6D00D920FA /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A47881EDB7B6D00D920FA /* DataManager.swift */; };
+		302B13071EFB451800A736A5 /* Aircraft+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302B13031EFB451800A736A5 /* Aircraft+CoreDataClass.swift */; };
+		302B13081EFB451800A736A5 /* Aircraft+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302B13041EFB451800A736A5 /* Aircraft+CoreDataProperties.swift */; };
+		302B13091EFB451800A736A5 /* Cabinets+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302B13051EFB451800A736A5 /* Cabinets+CoreDataClass.swift */; };
+		302B130A1EFB451800A736A5 /* Cabinets+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302B13061EFB451800A736A5 /* Cabinets+CoreDataProperties.swift */; };
+		302B130D1EFB471500A736A5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302B130C1EFB471500A736A5 /* CoreDataStack.swift */; };
 		30A3D0741ECB7CD100A79806 /* CabinetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A3D0731ECB7CD100A79806 /* CabinetCell.swift */; };
 		30A3D0761ECB807900A79806 /* IMG_3168.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 30A3D0751ECB807900A79806 /* IMG_3168.JPG */; };
 		30B5D1D21EC513AC00FF7F61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B5D1D11EC513AC00FF7F61 /* AppDelegate.swift */; };
@@ -21,6 +27,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		300A47881EDB7B6D00D920FA /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = ../DataManager.swift; sourceTree = "<group>"; };
+		302B13031EFB451800A736A5 /* Aircraft+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Aircraft+CoreDataClass.swift"; sourceTree = "<group>"; };
+		302B13041EFB451800A736A5 /* Aircraft+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Aircraft+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		302B13051EFB451800A736A5 /* Cabinets+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cabinets+CoreDataClass.swift"; sourceTree = "<group>"; };
+		302B13061EFB451800A736A5 /* Cabinets+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cabinets+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		302B130C1EFB471500A736A5 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		30A3D0731ECB7CD100A79806 /* CabinetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabinetCell.swift; sourceTree = "<group>"; };
 		30A3D0751ECB807900A79806 /* IMG_3168.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3168.JPG; sourceTree = "<group>"; };
 		30B5D1CE1EC513AC00FF7F61 /* StokR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StokR.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +61,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		300A478A1EDB7BDD00D920FA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				30B5D1E61EC517CB00FF7F61 /* TailsTableViewController.swift */,
+				30B5D1EE1EC53D9E00FF7F61 /* EditTailsViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		300A478B1EDB7BF800D920FA /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				30B5D1F01EC5415C00FF7F61 /* TailTableViewCell.swift */,
+				30A3D0731ECB7CD100A79806 /* CabinetCell.swift */,
+			);
+			name = TableViewCells;
+			sourceTree = "<group>";
+		};
+		302B130B1EFB466A00A736A5 /* CoreDataAccessors */ = {
+			isa = PBXGroup;
+			children = (
+				302B13031EFB451800A736A5 /* Aircraft+CoreDataClass.swift */,
+				302B13041EFB451800A736A5 /* Aircraft+CoreDataProperties.swift */,
+				302B13051EFB451800A736A5 /* Cabinets+CoreDataClass.swift */,
+				302B13061EFB451800A736A5 /* Cabinets+CoreDataProperties.swift */,
+			);
+			name = CoreDataAccessors;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		30B5D1C51EC513AB00FF7F61 = {
 			isa = PBXGroup;
 			children = (
@@ -72,15 +114,16 @@
 			children = (
 				30B5D1EA1EC51B8700FF7F61 /* StokR.entitlements */,
 				30B5D1D11EC513AC00FF7F61 /* AppDelegate.swift */,
-				30B5D1E61EC517CB00FF7F61 /* TailsTableViewController.swift */,
-				30B5D1F01EC5415C00FF7F61 /* TailTableViewCell.swift */,
-				30B5D1EE1EC53D9E00FF7F61 /* EditTailsViewController.swift */,
+				300A478A1EDB7BDD00D920FA /* ViewControllers */,
+				300A478B1EDB7BF800D920FA /* TableViewCells */,
+				300A47881EDB7B6D00D920FA /* DataManager.swift */,
 				30B5D1D51EC513AC00FF7F61 /* Main.storyboard */,
-				30A3D0731ECB7CD100A79806 /* CabinetCell.swift */,
 				30B5D1DB1EC513AC00FF7F61 /* Assets.xcassets */,
 				30B5D1DD1EC513AC00FF7F61 /* LaunchScreen.storyboard */,
 				30B5D1E01EC513AC00FF7F61 /* Info.plist */,
 				30B5D1D81EC513AC00FF7F61 /* StokR.xcdatamodeld */,
+				302B130C1EFB471500A736A5 /* CoreDataStack.swift */,
+				302B130B1EFB466A00A736A5 /* CoreDataAccessors */,
 			);
 			path = StokR;
 			sourceTree = "<group>";
@@ -126,6 +169,7 @@
 					30B5D1CD1EC513AB00FF7F61 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 974VC57NGN;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -175,12 +219,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				302B13081EFB451800A736A5 /* Aircraft+CoreDataProperties.swift in Sources */,
 				30A3D0741ECB7CD100A79806 /* CabinetCell.swift in Sources */,
+				302B13091EFB451800A736A5 /* Cabinets+CoreDataClass.swift in Sources */,
+				302B130D1EFB471500A736A5 /* CoreDataStack.swift in Sources */,
+				302B130A1EFB451800A736A5 /* Cabinets+CoreDataProperties.swift in Sources */,
 				30B5D1E71EC517CB00FF7F61 /* TailsTableViewController.swift in Sources */,
 				30B5D1F11EC5415C00FF7F61 /* TailTableViewCell.swift in Sources */,
+				300A47891EDB7B6D00D920FA /* DataManager.swift in Sources */,
 				30B5D1DA1EC513AC00FF7F61 /* StokR.xcdatamodeld in Sources */,
 				30B5D1EF1EC53D9E00FF7F61 /* EditTailsViewController.swift in Sources */,
 				30B5D1D21EC513AC00FF7F61 /* AppDelegate.swift in Sources */,
+				302B13071EFB451800A736A5 /* Aircraft+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,10 +358,12 @@
 				CODE_SIGN_ENTITLEMENTS = StokR/StokR.entitlements;
 				DEVELOPMENT_TEAM = 974VC57NGN;
 				INFOPLIST_FILE = StokR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martindev.StokR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -322,10 +374,12 @@
 				CODE_SIGN_ENTITLEMENTS = StokR/StokR.entitlements;
 				DEVELOPMENT_TEAM = 974VC57NGN;
 				INFOPLIST_FILE = StokR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.martindev.StokR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

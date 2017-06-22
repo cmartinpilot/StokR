@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Aircraft" representedClassName="Aircraft" syncable="YES" codeGenerationType="class">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13154.26" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Aircraft" representedClassName="Aircraft" syncable="YES">
+        <attribute name="recordID" optional="YES" attributeType="Transformable" customClassName="CKRecordID" syncable="YES"/>
         <attribute name="tail" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cabinets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cabinets" inverseName="tail" inverseEntity="Cabinets" syncable="YES"/>
+    </entity>
+    <entity name="Cabinets" representedClassName="Cabinets" syncable="YES">
+        <attribute name="cabinetImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordID" optional="YES" attributeType="Transformable" customClassName="CKRecordID" syncable="YES"/>
+        <relationship name="tail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Aircraft" inverseName="cabinets" inverseEntity="Aircraft" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Aircraft" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="Aircraft" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Cabinets" positionX="214" positionY="-18" width="128" height="103"/>
     </elements>
 </model>
